@@ -2,7 +2,7 @@
 # Using the name variable with the URL in line 13 is conviniet
 # when copying and pasting from another recipe, but not really needed.
 {% set name = "lame" %}
-{% set version = "3.100" %}
+{% set version = "None" %}
 
 package:
   name: {{ name }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://downloads.sourceforge.net/sourceforge/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e
+  sha256: 8cf5ce27d21490c24eedf91e0ac2bc4a748ba8f4eb20cb7c1fc9442d2d580008
   patches:
     - libmp3lame.patch
 
