@@ -27,7 +27,8 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - make
+    - make     # [unix]
+    - libtool  # [unix]
   host:
     - libiconv  # [osx]
 
