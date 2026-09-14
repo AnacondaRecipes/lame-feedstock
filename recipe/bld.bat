@@ -1,6 +1,10 @@
 @echo ON
 
-nmake -f Makefile.MSVC MSVCVER=Win64 comp=msvc asm=yes libmp3lame.dll lame.exe
+if "%target_platform%"=="win-arm64" (
+    nmake -f Makefile.MSVC MSVCVER=Win64 MACHINE=/machine:ARM64 ADDL_OBJ= comp=msvc asm=yes libmp3lame.dll lame.exe
+) else (
+    nmake -f Makefile.MSVC MSVCVER=Win64 comp=msvc asm=yes libmp3lame.dll lame.exe
+)
 if errorlevel 1 exit 1
 
 dir
